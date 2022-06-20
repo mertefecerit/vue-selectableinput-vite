@@ -34,7 +34,8 @@ const getRecord = (e) =>{
         </div>
         <div class="w-80 flex flex-col gap-2">
             <div class="w-full">
-                <SelectableInput 
+                <SelectableInput
+                    placeholder="Kayıt Ara"
                     :selected-data-id="selectedUser" 
                     :data-set="staticJson" 
                     column-name="name" 

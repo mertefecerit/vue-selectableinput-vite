@@ -1,6 +1,6 @@
 <template>
     <div ref="selectableInput" class="relative w-full">
-        <input v-model="inputValue" @click.prevent="showMenu" type="text" class="focus:outline-none border p-2 rounded w-full relative" placeholder="Please Typing...">
+        <input v-model="inputValue" @click.prevent="showMenu" type="text" class="focus:outline-none border p-2 rounded w-full relative" :placeholder="placeholder">
         <button @click="reset" v-if="inputValue" class="absolute right-1 top-2 rounded px-2 py-1 text-[0.8rem] bg-gray-200 text-gray-500">X</button>
         <div v-if="showStatus" class="absolute top-0 left-0 w-full bg-white p-2">
             <input @keyup.prevent="filter" ref="innerInput" v-model="inputValue" type="text" class="focus:outline-none border p-2 rounded w-full">
@@ -37,6 +37,10 @@
         selectedDataId:{
             required:false,
             type: Number
+        },
+        placeholder:{
+            default: "Type here...",
+            type: String
         }
     });
     //define emit
