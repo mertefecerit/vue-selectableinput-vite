@@ -1,10 +1,11 @@
 <template>
     <div ref="selectableInput" class="relative w-full">
-        <input v-model="inputValue" @click.prevent="showMenu" type="text" class="focus:outline-none border p-2 rounded w-full" placeholder="Please Typing...">
+        <input v-model="inputValue" @click.prevent="showMenu" type="text" class="focus:outline-none border p-2 rounded w-full relative" placeholder="Please Typing...">
+        <button @click="reset" v-if="inputValue" class="absolute right-1 top-2 rounded px-2 py-1 text-[0.8rem] bg-gray-200 text-gray-500">X</button>
         <div v-if="showStatus" class="absolute top-0 left-0 w-full bg-white p-2">
             <input @keyup.prevent="filter" ref="innerInput" v-model="inputValue" type="text" class="focus:outline-none border p-2 rounded w-full">
             <ul class="h-[200px] overflow-auto mt-2" v-if="data.length > 0">
-                <li v-for="record in data" :key="record.id"><a @click.prevent="setAndEmit(record)" href="#">{{record[columnName]}}</a></li>
+                <li v-for="record in data" :key="record.id"><a @click.prevent="setAndEmit(record)" href="#" class="inline-block w-full rounded hover:bg-sky-500 p-1 hover:text-white">{{record[columnName]}}</a></li>
             </ul>
         </div>
     </div>
@@ -100,4 +101,9 @@
         document.removeEventListener("click",checkOutsideClick)
     }
     // click result list element and set and emit event
+
+    const reset = () => {
+        inputValue.value = null
+        emit('getRecord',null);
+    }
 </script>
