@@ -1,6 +1,6 @@
 <script setup>
 import {onMounted, ref} from 'vue';
-import SelectableInput from "./components/SelectableInput/index.vue";
+import SelectableInput from "./components/SelectableInput.vue";
 import staticJson from "./assets/static.json";
 
 const dataSet = ref([]);
