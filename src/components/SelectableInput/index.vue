@@ -57,6 +57,7 @@
     // click first input method
     const showMenu = () => {
         showStatus.value = true
+        data.value = props.dataSet;
         document.addEventListener("click",checkOutsideClick)
     }
     // click first input method
