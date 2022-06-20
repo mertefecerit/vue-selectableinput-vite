@@ -105,5 +105,6 @@
     const reset = () => {
         inputValue.value = null
         emit('getRecord',null);
+        data.value = props.dataSet;
     }
 </script>
