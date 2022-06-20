@@ -33,6 +33,10 @@
         columnName:{
             required:true,
             type:String
+        },
+        selectedDataId:{
+            required:false,
+            type: Number
         }
     });
     //define emit
@@ -58,18 +62,28 @@
     // click first input method
 
 
-    // if this comp. receive static data-set modifiable data-set
+    // if this comp. receive static data-set modifiable data-set and set inputValue if selected any data
     onMounted(() => {
         data.value = props.dataSet;
+        const value = props.dataSet.find(item => item.id === props.selectedDataId);
+        if(value){
+            inputValue.value = value[props.columnName]
+        }
+        emit('getRecord',value);
     })
-    // if this comp. receive static data-set modifiable data-set
+    // if this comp. receive static data-set modifiable data-set and set inputValue if selected any data
 
 
-    // watch props for anychanges set modifiable data-set 
+    // watch props for anychanges set modifiable data-set and set inputValue if selected any data
     watch(props, () => {
         data.value = props.dataSet;
+        const value = props.dataSet.find(item => item.id === props.selectedDataId);
+        if(value){
+            inputValue.value = value[props.columnName]
+        }
+        emit('getRecord',value);
     })
-    // watch props for anychanges set modifiable data-set 
+    // watch props for anychanges set modifiable data-set and set inputValue if selected any data
 
 
     // watchEffect if component have innerInput named ref element focus on this

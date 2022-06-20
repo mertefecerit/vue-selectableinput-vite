@@ -11,3 +11,12 @@ This repo is clientside selectable input component example.
 </SelectableInput>
 ```
 ![example](https://user-images.githubusercontent.com/51813597/174535751-b82aec37-e8da-4219-83f7-d7dcb739a107.gif)
+
+**Update :**
+new prop for selected data :)
+```
+selectedDataId:{
+    required:false,
+    type: Number
+}
+```
