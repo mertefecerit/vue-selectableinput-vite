@@ -3,6 +3,7 @@
 This package is vue3 selectable input mixed component with Tailwind3
 
 - Note : this package required vue3 and tailwind3
+![example](https://user-images.githubusercontent.com/51813597/174663082-44f538a1-755a-476a-8f40-cb4da4e7697a.png)
 
 **Example :**
 ```
